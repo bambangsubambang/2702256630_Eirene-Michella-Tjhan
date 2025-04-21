@@ -20,32 +20,30 @@ import pickle
 st.markdown("""
     <style>
         body {
-            background-color: #fdfdfd; /* Soft white background */
-            color: #2f2f2f; /* Neutral dark text */
-            font-family: 'Georgia', serif; /* Elegant serif font */
+            background-color: #0D4715; /* Deep emerald background */
+            color: #F1F0E9; /* Light beige text */
+            font-family: 'Georgia', serif;
         }
 
         .stApp {
-            background-color: #fdfdfd;
+            background-color: #0D4715;
         }
 
         .stTitle {
-            color: #006644; /* Deep emerald for title */
+            color: #F1F0E9;
             font-size: 36px;
             font-weight: bold;
             text-align: center;
             margin-top: 20px;
         }
 
-        .stHeader {
-            color: #2f2f2f;
-            font-size: 24px;
-            font-weight: bold;
+        .stHeader, h3, .stSubheader {
+            color: #F1F0E9;
         }
 
         .stButton>button {
             background-color: #2ecc71; /* Emerald green */
-            color: white;
+            color: #F1F0E9;
             font-size: 18px;
             padding: 12px 20px;
             border-radius: 10px;
@@ -56,43 +54,41 @@ st.markdown("""
         }
 
         .stButton>button:hover {
-            background-color: #27ae60; /* Slightly darker emerald */
+            background-color: #27ae60;
         }
 
         .stSelectbox, .stNumberInput, .stSlider {
-            background-color: #f5fef8;
+            background-color: #144f22; /* slightly lighter than main bg */
             border-radius: 10px;
-            border: 1px solid #cce5d0;
+            border: 1px solid #2ecc71;
             padding: 8px;
             font-size: 16px;
+            color: #F1F0E9;
         }
 
         .stSelectbox>div, .stNumberInput>div {
             font-weight: 600;
-            color: #2f2f2f;
+            color: #F1F0E9;
         }
 
         .stSidebar {
-            background-color: #e9f9f1; /* light emerald tone */
+            background-color: #144f22;
             border-radius: 12px;
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 128, 64, 0.1);
+            color: #F1F0E9;
         }
 
         .stSlider .st-bb {
             font-size: 15px;
             font-weight: 600;
-            color: #1c684e;
+            color: #F1F0E9;
         }
 
-        h3, .stSubheader {
-            color: #006644;
-        }
-
-        .stMarkdown, .stWrite {
+        .stMarkdown, .stWrite, .stText, .stRadio, .stSelectbox label, .stNumberInput label {
             font-size: 17px;
             line-height: 1.6;
-            color: #2f2f2f;
+            color: #F1F0E9;
         }
 
         .emoji {
@@ -100,12 +96,24 @@ st.markdown("""
             margin-right: 10px;
         }
 
-        /* Smooth transitions for interactivity */
+        .stTextInput, .stTextArea, .stCheckbox {
+            color: #F1F0E9;
+        }
+
+        .stTextInput>div>input {
+            background-color: #144f22;
+            color: #F1F0E9;
+            border-radius: 8px;
+            border: 1px solid #2ecc71;
+        }
+
+        /* Smooth transitions */
         .stButton>button, .stSelectbox, .stNumberInput {
             transition: all 0.3s ease-in-out;
         }
     </style>
 """, unsafe_allow_html=True)
+
 
 def main():
     st.title("🏨 Hotel Booking Cancellation Prediction 🏨")
