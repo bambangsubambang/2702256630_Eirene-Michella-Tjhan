@@ -13,8 +13,8 @@ import numpy as np
 
 import pickle
 
-with open('best_model.pkl', 'wb') as f:
-    pickle.dump(model, f)
+with open('best_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 st.markdown("""
     <style>
