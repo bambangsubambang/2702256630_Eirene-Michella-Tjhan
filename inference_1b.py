@@ -19,10 +19,13 @@ import pickle
 
 st.markdown("""
     <style>
+        /* Import Poppins and Playfair Display fonts from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
         body {
             background-color: #2C3930;
             color: #DCD7C9;
-            font-family: 'Georgia', serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .stApp {
@@ -31,34 +34,37 @@ st.markdown("""
 
         .stTitle {
             color: #DCD7C9;
-            font-size: 30px;
-            font-weight: bold;
+            font-size: 18px;
+            font-weight: 700;
             text-align: center;
-            margin-top: 20px;
+            font-family: 'Playfair Display', serif;
         }
 
         .stHeader, h3, .stSubheader {
             color: #DCD7C9;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stButton {
+            display: flex;
+            justify-content: center;
         }
 
         .stButton>button {
-            background-color: #6E8E59; /* Predict button */
+            background-color: #6E8E59;
             color: #DCD7C9;
             font-size: 18px;
             padding: 12px 20px;
             border-radius: 10px;
             border: none;
-            font-weight: bold;
+            font-weight: 600;
             box-shadow: 0 4px 10px rgba(110, 142, 89, 0.3);
             transition: 0.3s;
+            font-family: 'Poppins', sans-serif;
         }
 
         .stButton>button:hover {
             background-color: #5c7749;
-        }
-
-        .stSlider {
-            color: #DCD7C9;
         }
 
         .stSlider .st-bb {
@@ -67,17 +73,14 @@ st.markdown("""
             color: #DCD7C9;
         }
 
-        .stSlider .st-c5 {
-            background-color: #A27B5C; /* Slider bar */
-        }
-
         .stSelectbox, .stNumberInput, .stTextInput>div>input {
             background-color: #3F4F44;
             color: #DCD7C9;
             border-radius: 10px;
-            border: 1px solid #A27B5C;
+            border: 1px solid #6E8E59;
             padding: 8px;
             font-size: 16px;
+            font-family: 'Poppins', sans-serif;
         }
 
         .stSelectbox>div, .stNumberInput>div {
@@ -97,6 +100,15 @@ st.markdown("""
             font-size: 17px;
             line-height: 1.6;
             color: #DCD7C9;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        ul li::marker {
+            color: #A27B5C;
         }
 
         .emoji {
@@ -108,22 +120,22 @@ st.markdown("""
             background-color: #3F4F44;
             color: #DCD7C9;
             border-radius: 8px;
-            border: 1px solid #A27B5C;
+            border: 1px solid #6E8E59;
         }
 
         .stTextArea textarea {
             background-color: #3F4F44;
             color: #DCD7C9;
-            border: 1px solid #A27B5C;
+            border: 1px solid #6E8E59;
             border-radius: 8px;
         }
 
-        /* Smooth transitions */
         .stButton>button, .stSelectbox, .stNumberInput {
             transition: all 0.3s ease-in-out;
         }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
