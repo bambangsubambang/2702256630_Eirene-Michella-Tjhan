@@ -20,75 +20,83 @@ import pickle
 st.markdown("""
     <style>
         body {
-            background-color: #0D4715; /* Deep emerald background */
-            color: #F1F0E9; /* Light beige text */
+            background-color: #2C3930;
+            color: #DCD7C9;
             font-family: 'Georgia', serif;
         }
 
         .stApp {
-            background-color: #0D4715;
+            background-color: #2C3930;
         }
 
         .stTitle {
-            color: #F1F0E9;
-            font-size: 36px;
+            color: #DCD7C9;
+            font-size: 30px;
             font-weight: bold;
             text-align: center;
             margin-top: 20px;
         }
 
         .stHeader, h3, .stSubheader {
-            color: #F1F0E9;
+            color: #DCD7C9;
         }
 
         .stButton>button {
-            background-color: #2ecc71; /* Emerald green */
-            color: #F1F0E9;
+            background-color: #6E8E59; /* Predict button */
+            color: #DCD7C9;
             font-size: 18px;
             padding: 12px 20px;
             border-radius: 10px;
             border: none;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+            box-shadow: 0 4px 10px rgba(110, 142, 89, 0.3);
             transition: 0.3s;
         }
 
         .stButton>button:hover {
-            background-color: #27ae60;
+            background-color: #5c7749;
         }
 
-        .stSelectbox, .stNumberInput, .stSlider {
-            background-color: #144f22; /* slightly lighter than main bg */
-            border-radius: 10px;
-            border: 1px solid #2ecc71;
-            padding: 8px;
-            font-size: 16px;
-            color: #F1F0E9;
-        }
-
-        .stSelectbox>div, .stNumberInput>div {
-            font-weight: 600;
-            color: #F1F0E9;
-        }
-
-        .stSidebar {
-            background-color: #144f22;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 128, 64, 0.1);
-            color: #F1F0E9;
+        .stSlider {
+            color: #DCD7C9;
         }
 
         .stSlider .st-bb {
             font-size: 15px;
             font-weight: 600;
-            color: #F1F0E9;
+            color: #DCD7C9;
+        }
+
+        .stSlider .st-c5 {
+            background-color: #A27B5C; /* Slider bar */
+        }
+
+        .stSelectbox, .stNumberInput, .stTextInput>div>input {
+            background-color: #3F4F44;
+            color: #DCD7C9;
+            border-radius: 10px;
+            border: 1px solid #A27B5C;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        .stSelectbox>div, .stNumberInput>div {
+            font-weight: 600;
+            color: #DCD7C9;
+        }
+
+        .stSidebar {
+            background-color: #3F4F44;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+            color: #DCD7C9;
         }
 
         .stMarkdown, .stWrite, .stText, .stRadio, .stSelectbox label, .stNumberInput label {
             font-size: 17px;
             line-height: 1.6;
-            color: #F1F0E9;
+            color: #DCD7C9;
         }
 
         .emoji {
@@ -96,15 +104,18 @@ st.markdown("""
             margin-right: 10px;
         }
 
-        .stTextInput, .stTextArea, .stCheckbox {
-            color: #F1F0E9;
+        .stTextInput>div>input {
+            background-color: #3F4F44;
+            color: #DCD7C9;
+            border-radius: 8px;
+            border: 1px solid #A27B5C;
         }
 
-        .stTextInput>div>input {
-            background-color: #144f22;
-            color: #F1F0E9;
+        .stTextArea textarea {
+            background-color: #3F4F44;
+            color: #DCD7C9;
+            border: 1px solid #A27B5C;
             border-radius: 8px;
-            border: 1px solid #2ecc71;
         }
 
         /* Smooth transitions */
@@ -113,6 +124,7 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 def main():
