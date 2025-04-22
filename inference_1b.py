@@ -143,16 +143,16 @@ def main():
     st.title("🏨 Hotel Booking Cancellation Prediction 🏨")
     st.write("""
       Welcome to **INN Hotels**' Booking Analyzer! ✨
-
+      
       Hotel managers, enhance your booking strategy with this tool that predicts whether a booking will be canceled based on guest details.
-
+      
       Fill in the reservation information below, and let’s forecast your booking’s status to optimize room occupancy and improve guest experience! 📊💡
       """)
-
+    
     st.subheader("⏳ Stay Duration")
     no_of_weekend_nights = st.slider("Weekend Nights", min_value = 0, max_value = 7, value = 1)
     no_of_week_nights = st.slider("Week Nights", min_value = 1, max_value = 20, value = 2)
-
+   
     # layout grid for input data (so there are 2 column shown)
     col1, col2 = st.columns(2)
 
@@ -189,7 +189,7 @@ def main():
     # room type reserved
     room_type_columns = ['Room_Type 1', 'Room_Type 2', 'Room_Type 3', 'Room_Type 4', 'Room_Type 5', 'Room_Type 6', 'Room_Type 7']
     room_type = [1 if room_type_reserved == rt else 0 for rt in room_type_columns]
-    # market segment type
+    # market segment type 
     market_segment_columns = ['Offline', 'Online', 'Corporate', 'Aviation', 'Complementary']
     market_segment = [1 if market_segment_type == ms else 0 for ms in market_segment_columns]
 
@@ -217,8 +217,7 @@ def main():
     input_df = pd.DataFrame([input_data])
 
     # load the trained model (pickled)
-    with open('best_model.pkl', 'rb') as file:
-        model = pickle.load(file)
+    model = joblib.load('best_model.joblib')
 
     # prediction button
     if st.button("Predict Booking Status"):
@@ -228,7 +227,7 @@ def main():
         if prediction == 1:
             st.error(f"❌ Booking is likely to be canceled with a probability of {probability:.2%}.")
         else:
-            st.success(f"✅ Booking is likely to be confirmed (Not Canceled) with a probability of {(1 - probability):.2%}.")
+            st.success(f"✅ Booking is likely to be confirmed (Not Canceled) with a probability of {(1 - probability):.2%}."
 
 if __name__ == '__main__':
     main()
