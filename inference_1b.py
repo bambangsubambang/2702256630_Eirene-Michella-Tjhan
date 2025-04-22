@@ -210,7 +210,7 @@ def main():
     input_df = pd.DataFrame([input_data])
 
     # load the trained model (pickled)
-    model = joblib.load('best_model.joblib')
+    model = joblib.load('best_model.pkl')
 
     # prediction button
     if st.button("Predict Booking Status"):
