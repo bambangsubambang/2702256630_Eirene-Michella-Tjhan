@@ -158,7 +158,7 @@ def main():
 
     with col2:
         st.subheader("💸 Financial Details")
-        market_segment_type = st.selectbox("💼 Tipe Market", ['Offline', 'Online', 'Corporate', 'Aviation', 'Complementary'])
+        market_segment_type = st.selectbox("💼 Market Segment", ['Offline', 'Online', 'Corporate', 'Aviation', 'Complementary'])
         avg_price_per_room = st.number_input("💶 Average Price per Room (€)", min_value = 0.0, max_value = 500.0, value = 100.0, step = 5.00)
         no_of_previous_cancellations = st.slider("Previous Cancellations", min_value = 0, max_value = 10, value = 0)
         no_of_previous_bookings_not_canceled = st.slider("Previous Non-Canceled Bookings", min_value = 0, max_value = 10, value = 1)
